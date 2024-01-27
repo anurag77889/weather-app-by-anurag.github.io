@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(/images/bcg.jpg);
+    background-image: url(bcg.jpg);
     background-size: cover;
 }
 .card{
