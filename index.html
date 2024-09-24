@@ -9,68 +9,77 @@
 </head>
 
 <body>
-    <div class="card">
-        <div class="searchbox">
-            <input type="text" placeholder="City Name" spellcheck="false">
-            <button type="button"><img src="search_icon-removebg-preview.png"></button>
-        </div>
-        <div class="error">
+    <div class="searchbox">
+        <input type="search" name="City name" placeholder="City name">
+        <button onclick="checkWeather()">Search</button>
+    </div>
+    <div class="container">
+        <div class="error" style="display: none;">
             <p>Invalid City Name</p>
         </div>
+        <div class="headline">
+            <h2>Want to know <br>
+                the Weather?</h2>
+            <h2>Just type and search</h2>
+        </div>
         <div class="weather">
-            <h1 class="temp">22° C</h1>
-            <h2 class="city">Bangalore</h2>
-            <div class="details">
-                <div class="col">
-                    <h2>Humidity</h2>
-                    <div class="humidity"></div>
-                </div>
-                <div class="col">
-                    <h2>Wind Speed</h2>
-                    <div class="wind"></div>
-                </div>
+            <div class="temp">
+                <h2>
+                    <span class="temperature"></span>
+                <br><span class="city"></span>
+                <br><span class="type"></span></h2>
+            </div>
+            <br><br><br>
+            <div class="properties">
+                <h2>
+                    <span class="humidity"></span>
+                <br><span class="wind"></span>
+                </h2>
             </div>
         </div>
+        <div class="image"><img src="/homepage.png" /></div>
     </div>
-
-
-<script>
-    const apiKey = "b1c97555e43672dd23c7e6c5d9b6d1c1";
-    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
     
-    const searchBox = document.querySelector('.searchbox input'); 
-    const searchBtn = document.querySelector('.searchbox button'); 
-    
-    async function checkWeather(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-
-    if(response.status == 404){
-        document.querySelector('.error').style.display = "block";
-        document.querySelector('.weather').style.display = "none";
-    }else{
-        var data = await response.json();
-
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " °C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-        
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
-    }
-    
-    }
-
-    searchBtn.addEventListener("click", ()=>{
-        checkWeather(searchBox.value);
-    })
-    
-</script>
 
 
 
 
 
+<script src="logic.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card">
+    <div class="searchbox">
+        <input type="text" placeholder="City Name" spellcheck="false">
+        <button type="button"><img src="search_icon-removebg-preview.png"></button>
+    </div>
+    <div class="error">
+        <p>Invalid City Name</p>
+    </div>
+    <div class="weather">
+        <h1 class="temp">22° C</h1>
+        <h2 class="city">Bangalore</h2>
+        <div class="details">
+            <div class="col">
+                <h2>Humidity</h2>
+                <div class="humidity"></div>
+            </div>
+            <div class="col">
+                <h2>Wind Speed</h2>
+                <div class="wind"></div>
+            </div>
+        </div>
+    </div>
+</div> -->
