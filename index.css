@@ -1,4 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+
+:root{
+    --main-bg-color: #FEDBC7;
+    --verycold-bg-color: #9AD1D8;
+    --cold-bg-color: #9FDFCE;
+    --warm-bg-color: #FCE7A4;
+    --hot-bg-color: #FE981B;
+    --veryhot-bg-color: #E75A2D;
+}
+
 *{
+    font-family: "SUSE", system-ui;
+}
+
+body{
+    background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.searchbox{
+    margin: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;   
+}
+
+.searchbox input{
+    width: 202px;
+    height: 40px;
+    border: 0;
+    border-radius: 50px;
+    padding-left: 20px;
+}
+
+.searchbox button{
+    border: 0;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--main-bg-color);
+    background-color: black;
+    cursor: pointer;
+}
+
+::placeholder{
+    color: black;
+    font-weight: 700;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.headline h2{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 50px;
+
+}
+
+.headline{
+    flex: 1;
+    display: block;
+}
+
+
+
+.weather{
+    margin-left: 20px;
+
+}
+
+.temperature{
+    font-size: 72px;
+}
+
+.city{
+    font-size: 48px;
+}
+
+.type{
+    font-size: 36px;
+}
+
+.humidity {
+    font-size: 30px;
+}
+
+.wind{
+    font-size: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *{
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -95,4 +215,4 @@ body{
 }
 .col h2,div{ 
     font-size: 30px;
-}
+} */
