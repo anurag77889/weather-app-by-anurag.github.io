@@ -97,7 +97,14 @@ body{
 .container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.container img{
+    position: relative;
+    top: 19px;
+}
+
 
 
 
